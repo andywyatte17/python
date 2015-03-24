@@ -64,7 +64,7 @@ if __name__ == "__main__":
 	bw = cv2.cvtColor(src, cv2.cv.CV_BGR2GRAY)
 	_, bw2 = cv2.threshold(bw, 10, 255, cv2.THRESH_BINARY)
 	bw2 = thinning(bw2)
-	bw2 = thinning(bw2)
+	bw2 = thinning(bw2) # doesn't thin fully?
 	cv2.imwrite("kanji-thin.png", bw2)
 	bw2_big = cv2.resize(bw2, (0,0), fx=2, fy=2, interpolation = cv2.INTER_NEAREST) 
 	cv2.imshow("src", bw)
